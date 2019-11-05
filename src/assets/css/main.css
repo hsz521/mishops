@@ -1,0 +1,10 @@
+.van-grid-item__content{
+	padding: 0 ;
+}
+.component-list-main .divider_line{
+	width: 100%;
+	border-bottom: 0.16rem solid rgb(245, 245, 245);
+	background-color: rgb(245, 245, 245);
+	    height: 0.16rem;
+}
+
