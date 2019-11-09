@@ -10,6 +10,7 @@ Vue.use(Vant);
 
 import axios from 'axios'
 Vue.prototype.$http=axios
+
 import './assets/css/main.css'
 new Vue({
   router,

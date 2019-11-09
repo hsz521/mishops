@@ -5,11 +5,18 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-	  goods:[
-		  
-	  ]
+	  goods:[],
+	  flag:false,
+  },
+  getters:{
+	  getlog(state){
+		  return state.flag;
+	  }
   },
   mutations: {
+	  setlog(state,item){
+		  state.flag=item
+	  }
   },
   actions: {
   },

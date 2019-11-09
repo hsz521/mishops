@@ -2,6 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Product from '../views/Product.vue'
+import Shops from '../views/Shops.vue'
+import Forest from '../views/Forest.vue'
+import Meto from '../views/Meto.vue'
+import Login from '../views/Login.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -17,9 +21,41 @@ const routes = [
     path: '/product/:id',
     name: 'product',
     component: Product,
-	meta:{
+	meta:{	
 		auth:false
 	}
+  },
+  {
+    path: '/forest',
+    name: 'forest',
+    component: Forest,
+  	meta:{
+  		auth:false
+  	}
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
+  	meta:{
+  		auth:false
+  	}
+  },
+  {
+    path: '/meto',
+    name: 'meto',
+    component: Meto,
+  	meta:{
+  		auth:true
+  	}
+  },
+  {
+    path: '/shops',
+    name: 'shops',
+    component: Shops,
+  	meta:{
+  		auth:true
+  	}
   },
   {
     path: '/about',
