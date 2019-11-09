@@ -16,7 +16,7 @@
 	</van-tabs>
 
 	<div v-show="active==0">	
-		<van-swipe :autoplay="3000">
+		<van-swipe :autoplay="3000" id="move1">
 		  <van-swipe-item v-for="(image, index) in data.data.data.sections[0].body.items" :key="index">
 		    <img class="full" :src="image.img_url_webp"/>
 		  </van-swipe-item>
@@ -404,14 +404,18 @@
 		  height="300px"
 		 :src="data.data.data.sections[52].body.items[0].img_url_webp"
 		/>
-	</div>
-	
+		<div class="top1"  style="position: fixed;left: 80%;top: 80%;width: 60px;height: 30px;	">
+			<a href="#move1">▲</a>
+		</div>
+	</div>	
+		
 			
 	
 		
 			
 	<div v-show="active==1" class="to1">	
 		<van-image
+		id="move3"
 		  width="100%"
 		  height="500px"
 		 :src="data2.data.data.sections[0].body.items[0].img_url_webp"
@@ -862,6 +866,9 @@
 			  </van-col>
 			</van-row>
 		</div>
+		<div class="top1"  style="position: fixed;left: 80%;top: 80%;width: 60px;height: 30px;	">
+			<a href="#move3">▲</a>
+		</div>
 	</div>	
 		
 		<div v-show="active==2" class="map">
@@ -871,12 +878,13 @@
 			  src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/0e16f6bddca5b7b37bc2dbf46c344670.jpg?f=webp"
 			/>
 			<van-image
+				id="move2"
 			  width="100%"
 			  height="240px"
 			  class="map1"
 			  src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/190ae9f1b4d278e51cba41155e35e58c.jpg?f=webp"
 			/>
-			<div >	
+			<div>	
 				<van-row class="map2">	
 				  <van-col span="8">
 					  <img :src="data3.data.data.sections[2].body.items[0].img_url_webp" alt="">	
@@ -1255,6 +1263,9 @@
 					</van-row>
 				</div>
 			</div>
+				<div class="top1"  style="position: fixed;left: 80%;top: 80%;width: 60px;height: 30px;	">
+					<a href="#move2">▲</a>
+				</div>
 		</div>		
 		
 					
@@ -1294,7 +1305,6 @@ export default {
 }		
 </script>			
 <style scoped lang="less">
-
 
 .map19{
 	position: relative;		

@@ -6,6 +6,7 @@ import Shops from '../views/Shops.vue'
 import Forest from '../views/Forest.vue'
 import Meto from '../views/Meto.vue'
 import Login from '../views/Login.vue'
+import Topa from '../views/Topa.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -26,9 +27,17 @@ const routes = [
 	}
   },
   {
-    path: '/forest',
+    path: '/forest/:id',
     name: 'forest',
     component: Forest,
+  	meta:{
+  		auth:false
+  	}
+  },
+  {
+    path: '/topa',
+    name: 'topa',
+    component: Topa,
   	meta:{
   		auth:false
   	}

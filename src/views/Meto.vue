@@ -3,7 +3,7 @@
 		<van-image
 		  width="100%"
 		  height="75"
-		  class="to2"
+		  class="to2"	
 		  src="https://m.mi.com/static/img/bg.63c8e19851.png"
 		/>
 		<div class="to3">
@@ -12,12 +12,13 @@
 				  <img src="https://m.mi.com/static/img/avatar.76a75b8f17.png" alt="">
 			  </van-col>
 			  <van-col span="8">
-				  <span @click="me" v-if="this.$store.getters.getlog" >登录/注册</span>
+				  <span @click="me" v-if="!this.$store.getters.getlog" >登录/注册</span>
 				</van-col>
 			</van-row>
-		</div>	
+				
+		</div>		
 		
-		
+		<p><button type="primary" @click="out" style="width: 100%;" v-show="this.$store.getters.getlog">退出</button></p>
 		
 		<div class="to4">
 			<van-row>
@@ -116,13 +117,27 @@
 	</div>	
 </template>
 
-<script>
+<script>	
 export default{
 	methods:{
 		me(){
 			this.$router.push('/login')
+		},
+		out(){
+			this.$http({
+				url:'http://www.520mg.com/member/index_login.php',
+				method:'post',	
+				withCredentials:true,
+				data:`dopost=exit`
+			}).then((res)=>{
+				console.log(res.data);
+				if(res.data.status==1){
+					this.$store.commit("setlog",false);
+					this.$router.push('/')
+				}
+			})
 		}
-	}
+	}	
 }	
 	
 </script>
